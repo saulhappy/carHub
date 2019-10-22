@@ -1,0 +1,2 @@
+class MaintRecordsController < ApplicationController
+end
