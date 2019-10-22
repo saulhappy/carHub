@@ -1,0 +1,7 @@
+<h1><%= @car.make %>'s Page</h1>
+
+Picture of car will go here
+
+<p><%= if @car.car_img_link then image_tag(@car.car_img_link) end %></p>
+
+<h5><%= "#{@car.year} #{@car.make} #{@car.model}" %></h5>

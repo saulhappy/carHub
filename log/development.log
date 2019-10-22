@@ -2314,3 +2314,375 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 59ms (Views: 37.5ms | ActiveRecord: 1.3ms | Allocations: 14123)
 
 
+Started GET "/" for ::1 at 2019-10-22 11:01:22 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.2ms | Allocations: 316)
+Completed 200 OK in 35ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 1978)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 11:02:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 18.7ms | Allocations: 2068)
+Completed 200 OK in 2077ms (Views: 2039.0ms | ActiveRecord: 1.6ms | Allocations: 1365331)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/new" for ::1 at 2019-10-22 11:28:18 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 692)
+Completed 200 OK in 83ms (Views: 52.3ms | ActiveRecord: 0.0ms | Allocations: 14323)
+
+
+Started POST "/users" for ::1 at 2019-10-22 11:28:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Qsd5UHaywfxZIVV39RfAsrgRntu4oE51lydTep+i+ruuUG01VXeg+wN7iFx+IN5e3+Qt50hyl1cxru5Pyq8/BQ==", "user"=>{"name"=>"steve", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (5.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "steve"], ["created_at", "2019-10-22 16:28:30.772635"], ["updated_at", "2019-10-22 16:28:30.772635"], ["password_digest", "$2a$10$nVsE9eYGyZQ81pW5Is5Ase57818VST3rh3Dfo4ZVK6DzU868J1LBO"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 217ms (ActiveRecord: 12.6ms | Allocations: 5111)
+
+
+Started GET "/users/6" for ::1 at 2019-10-22 11:28:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 116)
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 0.3ms | Allocations: 9426)
+
+
+Started POST "/users" for ::1 at 2019-10-22 11:30:28 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Qsd5UHaywfxZIVV39RfAsrgRntu4oE51lydTep+i+ruuUG01VXeg+wN7iFx+IN5e3+Qt50hyl1cxru5Pyq8/BQ==", "user"=>{"name"=>"Les", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Les"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Les"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Les"], ["created_at", "2019-10-22 16:30:28.547442"], ["updated_at", "2019-10-22 16:30:28.547442"], ["password_digest", "$2a$10$EQtrZbK27yoJvD4glZcB5usPcRZELXUPpdkwE6q8IOhjfTM78oLSq"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 90ms (ActiveRecord: 2.3ms | Allocations: 4357)
+
+
+Started GET "/users/7" for ::1 at 2019-10-22 11:30:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 180)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.2ms | Allocations: 10069)
+
+
+Started POST "/users" for ::1 at 2019-10-22 11:35:57 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Qsd5UHaywfxZIVV39RfAsrgRntu4oE51lydTep+i+ruuUG01VXeg+wN7iFx+IN5e3+Qt50hyl1cxru5Pyq8/BQ==", "user"=>{"name"=>"Gus", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Gus"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Gus"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Gus"], ["created_at", "2019-10-22 16:35:57.509308"], ["updated_at", "2019-10-22 16:35:57.509308"], ["password_digest", "$2a$10$qE2B5SyRuFncq/d1KLcOgeJpaB8kmsgk4C0uJW73W8XSSZSRssni2"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 114ms (ActiveRecord: 3.2ms | Allocations: 9101)
+
+
+Started GET "/users/8" for ::1 at 2019-10-22 11:35:57 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 176)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.3ms | Allocations: 10190)
+
+
+Started GET "/users/8" for ::1 at 2019-10-22 11:40:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 171)
+Completed 200 OK in 42ms (Views: 37.9ms | ActiveRecord: 0.3ms | Allocations: 10046)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:48:39 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 20.0ms | Allocations: 1269)
+Completed 200 OK in 105ms (Views: 62.4ms | ActiveRecord: 1.1ms | Allocations: 19365)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:52:01 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1087)
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.0ms | Allocations: 10482)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:53:43 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 30.6ms | Allocations: 4839)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms | Allocations: 6176)
+
+
+  
+ActionView::Template::Error (undefined method `year' for 1960..2020:Range):
+    13:     <%= range_field(:year, :year, in: 1900..2020) %><br>
+    14: 
+    15: 
+    16: <%= select_year(1960..2020) %>
+    17: 
+    18:     <label>Mileage:</label><br>
+    19:     <%= f.text_field :mileage %><br>
+  
+app/views/cars/new.html.erb:16
+app/views/cars/new.html.erb:2
+Started GET "/cars/new" for ::1 at 2019-10-22 11:54:10 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1099)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.0ms | Allocations: 10536)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:54:59 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 808)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 9271)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:55:16 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1085)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 10475)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:55:35 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1087)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 10480)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:55:43 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1091)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.0ms | Allocations: 10496)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 11:56:14 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1093)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 10491)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 12:00:43 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 1815)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms | Allocations: 3159)
+
+
+  
+ActionView::Template::Error (undefined method `-' for nil:NilClass):
+    15:     <%= range_field(:year, :year, in: 1900..2020) %><br>
+    16: <br>
+    17:     <label>Year:</label><br>
+    18:     <%= select_year(start_year: 1900, end_year: 2020) %>
+    19: <br>
+    20:     <label>Mileage:</label><br>
+    21:     <%= f.text_field :mileage %><br>
+  
+app/views/cars/new.html.erb:18
+app/views/cars/new.html.erb:3
+Started GET "/cars/new" for ::1 at 2019-10-22 12:01:25 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2521)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.0ms | Allocations: 11922)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 12:01:54 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2403)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 11805)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 12:04:18 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2400)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.0ms | Allocations: 11790)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 12:05:28 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 253.1ms | Allocations: 75426)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 0.0ms | Allocations: 76769)
+
+
+  
+ActionView::Template::Error (undefined method `text_area_tag' for #<ActionView::Helpers::FormBuilder:0x00007faef4d0a4a8>
+Did you mean?  text_area):
+    19:     <%= f.text_field :color %><br>
+    20: <br>
+    21:     <label>Description:</label><br>
+    22:     <%= f.text_area_tag :description %><br>
+    23: <br>
+    24:     <label>Upload of photo for you car:</label><br>
+    25: <br>
+  
+app/views/cars/new.html.erb:22
+app/views/cars/new.html.erb:3
+Started GET "/cars/new" for ::1 at 2019-10-22 12:06:01 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 4969)
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.0ms | Allocations: 14281)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 12:06:32 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2399)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 11791)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 12:06:54 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2400)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 11795)
+
+
+Started GET "/cars/1" for ::1 at 2019-10-22 12:13:41 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (1.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 998)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.8ms | Allocations: 3014)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    4: 
+    5: <p><%= if @car.car_img_link then image_tag(@car.car_img_link) end %></p>
+    6: 
+    7: <h6><%= @car.year @car.make @car.model %></h6>
+  
+app/views/cars/show.html.erb:7
+Started GET "/cars/1" for ::1 at 2019-10-22 12:14:04 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 139)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 0.2ms | Allocations: 10017)
+
+
+Started GET "/cars/1" for ::1 at 2019-10-22 12:15:35 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 143)
+Completed 200 OK in 66ms (Views: 62.6ms | ActiveRecord: 0.2ms | Allocations: 10018)
+
+
+Started GET "/cars/1" for ::1 at 2019-10-22 12:15:55 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 151)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.2ms | Allocations: 10031)
+
+
+Started GET "/cars/1" for ::1 at 2019-10-22 12:16:33 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 146)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.2ms | Allocations: 10022)
+
+
+Started GET "/cars/1" for ::1 at 2019-10-22 12:16:44 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 148)
+Completed 200 OK in 28ms (Views: 23.1ms | ActiveRecord: 0.2ms | Allocations: 10023)
+
+
+Started GET "/cars/1" for ::1 at 2019-10-22 12:17:07 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 148)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 0.2ms | Allocations: 10026)
+
+
+Started GET "/cars/1" for ::1 at 2019-10-22 12:17:22 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 148)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.2ms | Allocations: 10023)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-22 12:17:32 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2401)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 11000)
+
+

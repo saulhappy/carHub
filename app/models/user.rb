@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
     has_one :family
     has_many :cars, through: :user_cars
-
+    
+    validates :name, presence: true
     validates :name, uniqueness: true
 end
