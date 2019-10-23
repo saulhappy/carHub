@@ -11,20 +11,28 @@ class CarsController < ApplicationController
         @car = Car.find(params[:id])
     end 
 
-
     def create
-        @car = Car.new(user_params)
+        @car = Car.new(car_params)
         if @car.valid?
           @car.save
-          redirect_to user_path(@car)
+          redirect_to car_path(@car)
         else
           render :new
         end
     end 
 
+    def update
+        @car = Car.find(params[:id])
+        @car.update(car_params)
+        redirect_to car_path(@car)
+    end
+
+    def edit
+        @car = Car.find(params[:id])
+    end
 
     private
-      def user_params
-        params.require(:user).permit(:make, :model, :year, :mileage, :color, :description, :car_img_link, :car_gen_img_link, :is_gen_car)
+      def car_params
+        params.require(:car).permit(:user_id, :name, :make, :model, :year, :mileage, :color, :description, :car_img_link, :car_gen_img_link, :is_gen_car)
       end
 end

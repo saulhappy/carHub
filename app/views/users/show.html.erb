@@ -1,6 +1,14 @@
+<div align="center">
 <h1><%= @user.name %>'s Garage</h1>
+</div>
+  
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+<br>
+<br>
+<br>
+<br>
 
+<b><%= link_to "Add a car", new_car_path%></b>

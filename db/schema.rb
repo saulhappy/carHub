@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_213017) do
+ActiveRecord::Schema.define(version: 2019_10_22_233659) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_213017) do
     t.boolean "is_gen_car"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "families", force: :cascade do |t|
