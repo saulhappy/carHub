@@ -2314,3 +2314,769 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 59ms (Views: 37.5ms | ActiveRecord: 1.3ms | Allocations: 14123)
 
 
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePhotos (20191023144507)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023144507"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToPhotos (20191023144616)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToPhotos (20191023144616)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "photos" ADD "image_file_name" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "photos" ADD "image_content_type" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "photos" ADD "image_file_size" integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "photos" ADD "image_updated_at" datetime[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023144616"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/photos/new" for ::1 at 2019-10-23 09:54:45 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#new as HTML
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms | Allocations: 4524)
+
+
+  
+NoMethodError (undefined method `before_image_post_process' for #<Class:0x00007f8135f32948>
+Did you mean?  before_remove_const):
+  
+app/models/photo.rb:2:in `<class:Photo>'
+app/models/photo.rb:1:in `<main>'
+app/controllers/photos_controller.rb:11:in `new'
+Started GET "/photos/new" for ::1 at 2019-10-23 09:55:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PhotosController#new as HTML
+  Rendering photos/new.html.erb within layouts/application
+  Rendered photos/new.html.erb within layouts/application (Duration: 49.6ms | Allocations: 5432)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 203)
+Completed 200 OK in 6175ms (Views: 6149.2ms | ActiveRecord: 0.7ms | Allocations: 3516269)
+
+
+Started POST "/photos" for ::1 at 2019-10-23 09:56:09 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"XrBKKvqKsy6+rPD5yM36FEP3eNc5x4hhcoZw2JZCHZI7VvqZRZD0O+mrP7vmF5xmPSC/vtfeAbfgpznVR7UUfA==", "title"=>{"{:class=>%22form-control%22}"=>"vincent"}, "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f813a138360 @tempfile=#<Tempfile:/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/RackMultipart20191023-59666-je1hkb.jpg>, @original_filename="tesla-model-y-sunset.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"tesla-model-y-sunset.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-59666-1biekpy.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-59666-7ltca8.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-59666-7ltca8.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/5ab0f0a7c6dd57a7ae47e9ba06ed00d320191023-59666-129upjv.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/68f068883171003123d9c0e76a046be120191023-59666-9tjalr.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/68f068883171003123d9c0e76a046be120191023-59666-9tjalr.jpg[0]' -auto-orient -resize "x64" -crop "64x64+26+0" +repage -quality 75 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/d9b3471b9799c8039edee51819fe0aa520191023-59666-1bt5u30.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-59666-1sd3jb6.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-59666-upjn3j.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-59666-44qtb.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/photos_controller.rb:17:in `create'
+  [1m[36mPhoto Create (1.2ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2019-10-23 14:56:09.775762"], ["updated_at", "2019-10-23 14:56:09.775762"], ["image_file_name", "tesla-model-y-sunset.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 25709], ["image_updated_at", "2019-10-23 14:56:09.461910"]]
+  ↳ app/controllers/photos_controller.rb:17:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/photos_controller.rb:17:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 329ms (ActiveRecord: 2.2ms | Allocations: 10856)
+
+
+Started GET "/" for ::1 at 2019-10-23 09:56:09 -0500
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY created_at[0m
+  ↳ app/views/photos/index.html.erb:4
+  Rendered photos/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1144)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.3ms | Allocations: 13262)
+
+
+Started DELETE "/photos/1" for ::1 at 2019-10-23 09:56:13 -0500
+Processing by PhotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r0+cdVNhByy1z2FTOnFYMX/ka5RSGbpVQ7F/sl8kGT7KqSzG7HtAOeLIrhEUqz5DATOs/bwAM4PRkDa/jtMQ0A==", "id"=>"1"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:27:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/photos_controller.rb:28:in `destroy'
+  [1m[36mPhoto Destroy (0.4ms)[0m  [1m[31mDELETE FROM "photos" WHERE "photos"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/photos_controller.rb:28:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/photos_controller.rb:28:in `destroy'
+[paperclip] deleting /Users/vincentmarks/Documents/carHub/public/system/photos/images/000/000/001/original/tesla-model-y-sunset.jpg
+[paperclip] deleting /Users/vincentmarks/Documents/carHub/public/system/photos/images/000/000/001/thumb/tesla-model-y-sunset.jpg
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 1.9ms | Allocations: 4682)
+
+
+Started GET "/" for ::1 at 2019-10-23 09:56:13 -0500
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY created_at[0m
+  ↳ app/views/photos/index.html.erb:4
+  Rendered photos/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 581)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 68)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.3ms | Allocations: 12534)
+
+
+Started GET "/" for ::1 at 2019-10-23 09:56:20 -0500
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY created_at[0m
+  ↳ app/views/photos/index.html.erb:4
+  Rendered photos/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 588)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 68)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.3ms | Allocations: 12522)
+
+
+Started GET "/users/new" for ::1 at 2019-10-23 10:04:26 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 890)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 40ms (Views: 22.9ms | ActiveRecord: 0.6ms | Allocations: 18203)
+
+
+Started GET "/users" for ::1 at 2019-10-23 10:04:37 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 74)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 74)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 12154)
+
+
+Started GET "/users/new" for ::1 at 2019-10-23 10:04:40 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 441)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 46)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 12341)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImageFileNameToMaintRecords (20191023152558)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023152558"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023152817)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023152817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023152817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023152817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023152817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023152817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImageContentTypeToMaintRecords (20191023154552)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_content_type" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023154552"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImageFileSizeToMaintRecords (20191023154734)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_size" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023154734"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImageUpdatedAtToMaintRecords (20191023154845)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_updated_at" datetime[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023154845"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveRecordImgFromMaintRecords (20191023155030)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amaint_records" ("id" integer NOT NULL PRIMARY KEY, "car_id" integer DEFAULT NULL, "record_img" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_file_name" varchar DEFAULT NULL, "image_content_type" varchar DEFAULT NULL, "image_file_size" integer DEFAULT NULL, "image_updated_at" datetime DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "amaint_records" ("id","car_id","record_img","created_at","updated_at","image_file_name","image_content_type","image_file_size","image_updated_at")
+                     SELECT "id","car_id","record_img","created_at","updated_at","image_file_name","image_content_type","image_file_size","image_updated_at" FROM "maint_records"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "maint_records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "maint_records" ("id" integer NOT NULL PRIMARY KEY, "car_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_file_name" varchar DEFAULT NULL, "image_content_type" varchar DEFAULT NULL, "image_file_size" integer DEFAULT NULL, "image_updated_at" datetime DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "maint_records" ("id","car_id","created_at","updated_at","image_file_name","image_content_type","image_file_size","image_updated_at")
+                     SELECT "id","car_id","created_at","updated_at","image_file_name","image_content_type","image_file_size","image_updated_at" FROM "amaint_records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "amaint_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023155030"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023155309)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023155309)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/photos" for ::1 at 2019-10-23 11:10:26 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/photos/new" for ::1 at 2019-10-23 11:10:38 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMaintRecords (20191023155309)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "maint_records" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/photos/new" for ::1 at 2019-10-23 11:12:29 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#new as HTML
+  Rendering photos/new.html.erb within layouts/application
+  Rendered photos/new.html.erb within layouts/application (Duration: 19.5ms | Allocations: 3875)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 203)
+Completed 200 OK in 1786ms (Views: 1764.1ms | ActiveRecord: 0.6ms | Allocations: 1387212)
+
+
+Started GET "/maint_records/new" for ::1 at 2019-10-23 11:12:42 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1112)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 48)
+Completed 200 OK in 39ms (Views: 18.9ms | ActiveRecord: 0.7ms | Allocations: 21060)
+
+
+Started POST "/maint_records" for ::1 at 2019-10-23 11:13:07 -0500
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"zvP6qe8TXdUk0yH4DXkw9zuIkA3Itqoh1ANxlpPTrBarFUoaUAkawHPU7rojo1aFRV9XZCavI/dGIjibQiSl+A==", "car_id"=>{"{:class=>%22form-control%22}"=>"2"}, "maint_record"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe619d3c2f8 @tempfile=#<Tempfile:/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/RackMultipart20191023-60184-3n3m0v.jpg>, @original_filename="images.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"images.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 712)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: photo):
+  
+app/controllers/maint_records_controller.rb:38:in `record_params'
+app/controllers/maint_records_controller.rb:14:in `create'
+Started POST "/maint_records" for ::1 at 2019-10-23 11:14:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"zvP6qe8TXdUk0yH4DXkw9zuIkA3Itqoh1ANxlpPTrBarFUoaUAkawHPU7rojo1aFRV9XZCavI/dGIjibQiSl+A==", "car_id"=>{"{:class=>%22form-control%22}"=>"2"}, "maint_record"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe61f4926b0 @tempfile=#<Tempfile:/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/RackMultipart20191023-60184-1b8h2ez.jpg>, @original_filename="images.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"images.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-145kofl.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-s11inr.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-s11inr.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/9eb93402b1d1e5cac16833e6a81df60920191023-60184-cjrdun.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/c94488a2a7f826fe180f9c67e799c43520191023-60184-1wliv7s.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/c94488a2a7f826fe180f9c67e799c43520191023-60184-1wliv7s.jpg[0]' -auto-orient -resize "x64" -crop "64x64+16+0" +repage -quality 75 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/3ac1dbebc530e5d60c2fae7a8a877fbe20191023-60184-14r5yhx.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-12a4af5.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-1x702t0.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-137bnjt.jpg'
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 761)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 304ms (Views: 65.3ms | ActiveRecord: 0.6ms | Allocations: 28832)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-23 11:15:23 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 75)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 12499)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-23 11:15:29 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 68)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 11891)
+
+
+Started GET "/users/new" for ::1 at 2019-10-23 11:15:34 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 794)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 36ms (Views: 22.8ms | ActiveRecord: 0.8ms | Allocations: 17548)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-23 11:15:37 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 74)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 11906)
+
+
+Started GET "/maint_record/new" for ::1 at 2019-10-23 13:13:03 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/maint_record/new"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/maint_records/new" for ::1 at 2019-10-23 13:13:12 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 735)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 185)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.0ms | Allocations: 13935)
+
+
+Started POST "/maint_records" for ::1 at 2019-10-23 13:13:22 -0500
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"nv8Fv+if1i3NecS8R3n3M/rnBBEi+jh1lqE5U2Iexgb7GbUMV4WROJp+C/5po5FBhDDDeMzjsaMEgHBes+nP6A==", "maint_record"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe619e6d528 @tempfile=#<Tempfile:/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/RackMultipart20191023-60184-r4wahg.jpg>, @original_filename="images.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"images.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-m2g0k6.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-kmxkfu.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-kmxkfu.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/2d413c9f0924b2f11819de3c923131c420191023-60184-srk7ro.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/bd75ebe789b53cf5a0b31e73b317986120191023-60184-ky73fp.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/bd75ebe789b53cf5a0b31e73b317986120191023-60184-ky73fp.jpg[0]' -auto-orient -resize "x64" -crop "64x64+16+0" +repage -quality 75 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/f82a227b93de57dbd8d30c23f2b6b17620191023-60184-1s8yijd.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-fplqx2.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-16aqni9.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-wohjcf.jpg'
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 548)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 46)
+Completed 200 OK in 283ms (Views: 105.7ms | ActiveRecord: 0.0ms | Allocations: 16382)
+
+
+Started GET "/maint_records" for ::1 at 2019-10-23 13:15:36 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#index as HTML
+  Rendering maint_records/index.html.erb within layouts/application
+  [1m[36mMaintRecord Load (0.7ms)[0m  [1m[34mSELECT "maint_records".* FROM "maint_records" ORDER BY created_at[0m
+  ↳ app/views/maint_records/index.html.erb:4
+  Rendered maint_records/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 6220)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 75)
+Completed 200 OK in 57ms (Views: 48.7ms | ActiveRecord: 1.6ms | Allocations: 20524)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2019-10-23 13:15:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/images/original/missing.png" for ::1 at 2019-10-23 13:15:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/maint_records/new" for ::1 at 2019-10-23 13:16:01 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 497)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 46)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 12398)
+
+
+Started POST "/maint_records" for ::1 at 2019-10-23 13:16:07 -0500
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"ai0yG6k7BMUOQd/HegJbJ628eUD8V2Hd6eVP4f6qLS4Py4KoFiFD0FlGEIVU2D1V02u+KRJO6At7xAbsL10kwA==", "maint_record"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe61f2d0340 @tempfile=#<Tempfile:/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/RackMultipart20191023-60184-58w4qy.jpg>, @original_filename="images.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"images.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-1fhrj9i.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-a93ycy.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-a93ycy.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b124d65ecd83b7c9446ab2423f230c0b20191023-60184-bwy4c9.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/78802b596752a3baff77dfb8b593016420191023-60184-r1pzk7.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/78802b596752a3baff77dfb8b593016420191023-60184-r1pzk7.jpg[0]' -auto-orient -resize "x64" -crop "64x64+16+0" +repage -quality 75 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/679af263429932db1d476f39740a752c20191023-60184-12y3l5w.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-1beh93h.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-u5kh9n.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-7j24xa.jpg'
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 543)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 46)
+Completed 200 OK in 141ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 20212)
+
+
+Started GET "/maint_records" for ::1 at 2019-10-23 13:16:12 -0500
+Processing by MaintRecordsController#index as HTML
+  Rendering maint_records/index.html.erb within layouts/application
+  [1m[36mMaintRecord Load (0.4ms)[0m  [1m[34mSELECT "maint_records".* FROM "maint_records" ORDER BY created_at[0m
+  ↳ app/views/maint_records/index.html.erb:4
+  Rendered maint_records/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 834)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 68)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms | Allocations: 12778)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2019-10-23 13:16:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/images/original/missing.png" for ::1 at 2019-10-23 13:16:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/maint_records" for ::1 at 2019-10-23 13:16:32 -0500
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"ai0yG6k7BMUOQd/HegJbJ628eUD8V2Hd6eVP4f6qLS4Py4KoFiFD0FlGEIVU2D1V02u+KRJO6At7xAbsL10kwA==", "maint_record"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe61f0b1fa0 @tempfile=#<Tempfile:/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/RackMultipart20191023-60184-10xf35m.jpg>, @original_filename="tesla-model-y-sunset.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"tesla-model-y-sunset.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-60184-1w1qvcq.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-60184-hahxj1.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-60184-hahxj1.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/444637b9250dea5820631e301a0b098420191023-60184-xodxuh.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/60da32b1e7150871b93be1d69f39f93220191023-60184-1a4pxuk.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/60da32b1e7150871b93be1d69f39f93220191023-60184-1a4pxuk.jpg[0]' -auto-orient -resize "x64" -crop "64x64+26+0" +repage -quality 75 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/513899a01abf8a6b58c9da47ebc8d5a820191023-60184-di99pv.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-60184-vs1bas.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-60184-a7tsf0.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/b20ca649966e8c7f239b9447a7324f2d20191023-60184-hflet4.jpg'
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 543)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 46)
+Completed 200 OK in 230ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 16322)
+
+
+Started GET "/" for ::1 at 2019-10-23 13:18:19 -0500
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY created_at[0m
+  ↳ app/views/photos/index.html.erb:4
+  Rendered photos/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1134)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 75)
+Completed 200 OK in 24ms (Views: 16.8ms | ActiveRecord: 1.0ms | Allocations: 15317)
+
+
+Started GET "/photos/new" for ::1 at 2019-10-23 13:18:27 -0500
+Processing by PhotosController#new as HTML
+  Rendering photos/new.html.erb within layouts/application
+  Rendered photos/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 998)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 48)
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 17501)
+
+
+Started POST "/photos" for ::1 at 2019-10-23 13:18:35 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"IQ/HIXx8H/n9TnuLgZKvH1yuyQxpB49gsER/P5bMK+xE6XeSw2ZY7KpJtMmvSMltInkOZYceBrYiZTYyRzsiAg==", "title"=>{"{:class=>%22form-control%22}"=>""}, "photo"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe61cf35340 @tempfile=#<Tempfile:/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/RackMultipart20191023-60184-19as31w.jpg>, @original_filename="images.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"images.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-187chj8.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-13v4t5k.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-13v4t5k.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/08f1be6382cced247f3f24741308136820191023-60184-lkplbq.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/c21d933ffc35359058248e4eddb215d520191023-60184-1kvmb1s.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/c21d933ffc35359058248e4eddb215d520191023-60184-1kvmb1s.jpg[0]' -auto-orient -resize "x64" -crop "64x64+16+0" +repage -quality 75 -strip '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/82a0f5824c36b522e1a257b82d2cfedf20191023-60184-m801ay.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-1onjd5q.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-1ecp8bf.jpg'
+Command :: file -b --mime '/var/folders/qp/kjq95q6n575dlj6vj849d9300000gn/T/59b514174bffe4ae402b3d63aad79fe020191023-60184-1i2244m.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/photos_controller.rb:17:in `create'
+  [1m[36mPhoto Create (1.5ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2019-10-23 18:18:35.779110"], ["updated_at", "2019-10-23 18:18:35.779110"], ["image_file_name", "images.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 12336], ["image_updated_at", "2019-10-23 18:18:35.660965"]]
+  ↳ app/controllers/photos_controller.rb:17:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/photos_controller.rb:17:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 134ms (ActiveRecord: 2.9ms | Allocations: 9851)
+
+
+Started GET "/" for ::1 at 2019-10-23 13:18:35 -0500
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY created_at[0m
+  ↳ app/views/photos/index.html.erb:4
+  Rendered photos/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 905)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 46)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.2ms | Allocations: 12827)
+
+
+Started DELETE "/photos/2" for ::1 at 2019-10-23 13:18:38 -0500
+Processing by PhotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"otDi4NJ5BgnT/E3XWG2ikMh6WwEiEhRPDrMUqKliTDHHNlJTbWNBHIT7gpV2t8Titq2caMwLnZmckl2leJVF3w==", "id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:27:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/photos_controller.rb:28:in `destroy'
+  [1m[36mPhoto Destroy (0.3ms)[0m  [1m[31mDELETE FROM "photos" WHERE "photos"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/photos_controller.rb:28:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/photos_controller.rb:28:in `destroy'
+[paperclip] deleting /Users/vincentmarks/Documents/carHub/public/system/photos/images/000/000/002/original/images.jpg
+[paperclip] deleting /Users/vincentmarks/Documents/carHub/public/system/photos/images/000/000/002/thumb/images.jpg
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.6ms | Allocations: 4681)
+
+
+Started GET "/" for ::1 at 2019-10-23 13:18:38 -0500
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY created_at[0m
+  ↳ app/views/photos/index.html.erb:4
+  Rendered photos/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 580)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 68)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.3ms | Allocations: 16464)
+
+
