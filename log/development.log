@@ -16915,3 +16915,72 @@ Processing by CarsController#show as HTML
 Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.2ms | Allocations: 8969)
 
 
+Started GET "/cars/6" for ::1 at 2019-10-23 13:22:32 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 455.9ms | Allocations: 146368)
+Completed 500 Internal Server Error in 501ms (ActiveRecord: 1.0ms | Allocations: 159596)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions' for #<#<Class:0x00007ff6f987bac0>:0x00007ff6f9878ed8>
+Did you mean?  session):
+    11: 
+    12: Link to the Maintenance Record's show page will go here
+    13: 
+    14: <p> <%= sessions[:user_id] %> </p>
+  
+app/views/cars/show.html.erb:14
+Started GET "/cars/6" for ::1 at 2019-10-23 13:22:47 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 186)
+Completed 200 OK in 1641ms (Views: 1637.3ms | ActiveRecord: 0.3ms | Allocations: 1358541)
+
+
+Started GET "/users/8" for ::1 at 2019-10-23 13:23:06 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 270)
+Completed 200 OK in 35ms (Views: 19.8ms | ActiveRecord: 1.2ms | Allocations: 14180)
+
+
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" ORDER BY "cars"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/cars/8" for ::1 at 2019-10-23 13:24:07 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1067)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Car with 'id'=8):
+  
+app/controllers/cars_controller.rb:11:in `show'
+Started GET "/cars/6" for ::1 at 2019-10-23 13:24:22 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 21)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.2ms | Allocations: 8817)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUserCar Load (0.3ms)[0m  [1m[34mSELECT "user_cars".* FROM "user_cars" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUserCar Load (0.5ms)[0m  [1m[34mSELECT "user_cars".* FROM "user_cars" ORDER BY "user_cars"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
