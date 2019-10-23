@@ -1,0 +1,12 @@
+<div align="center">
+<h1><%= @car.name %>'s Page</h1>
+<h5><%= "#{@car.year} #{@car.make} #{@car.model}" %></h5>
+</div>
+  
+
+Picture of car will go here
+
+<p><%= if @car.car_img_link then image_tag(@car.car_img_link) end %></p>
+
+
+Link to the Maintenance Record's show page will go here

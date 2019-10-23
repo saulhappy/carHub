@@ -1,0 +1,35 @@
+<h1> Add a New Car!</h1>
+<br>
+<%= form_for @car do |f| %>
+<br>
+    <label>Upload of photo of your car:</label><br>
+<br>
+<br>
+    <label>Give your car a name:</label><br>
+    <%= f.text_field :name %><br>
+<br>
+
+<br>
+    <label>Make:</label><br>
+    <%= f.text_field :make %><br>
+<br>
+    <label>Model:</label><br>
+    <%= f.text_field :model %><br>
+<br>
+    <label>Year:</label><br>
+    <%= select_year(Date.today, start_year: 1900, end_year: 2020) %>
+<br>
+<br>
+    <label>Mileage:</label><br>
+    <%= f.text_field :mileage %><br>
+<br>
+    <label>Color:</label><br>
+    <%= f.text_field :color %><br>
+<br>
+    <label>Description:</label><br>
+    <%= f.text_area :description %><br>
+<br>
+    <%= f.submit %>
+
+<br>
+<% end %>

@@ -1,0 +1,5 @@
+<div align="center">
+<h1><%= Car.select('name').joins(:maint_records).find_by(@maint_record.car_id => params[:id]) %>'s Maintenance Records</h1>
+</div>
+
+<%-# Car.select('name').joins(:maint_records).find_by('cars.id' => 1)  -%>

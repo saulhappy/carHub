@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_213017) do
+ActiveRecord::Schema.define(version: 2019_10_23_201520) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_213017) do
     t.boolean "is_gen_car"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "families", force: :cascade do |t|
@@ -35,9 +36,20 @@ ActiveRecord::Schema.define(version: 2019_10_21_213017) do
 
   create_table "maint_records", force: :cascade do |t|
     t.integer "car_id"
-    t.string "record_img"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer "car_id"
   end
 
   create_table "user_cars", force: :cascade do |t|
