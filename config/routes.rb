@@ -4,9 +4,17 @@ Rails.application.routes.draw do
   resources :families
   resources :users
   resources :cars
-  resources :sessions, only: [:new, :create, :destroy]
   resources :photos
+  
+  resources :sessions, only: [:new, :create, :destroy]
+  get "/login", to: "sessions#new", as: "login"
+  post "/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy", as: "logout"
+  
   root to: "photos#index"
+
+
+  #root 'static_pages#home'
 
 
 

@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  
   helper_method :current_user
 
     def current_user
@@ -10,5 +9,9 @@ class ApplicationController < ActionController::Base
       end
     end
 
-
+    # def logged_in
+    #   redirect_to "login" unless 
+    #     session.include? :user_id
+    #   end
+    # end
 end
