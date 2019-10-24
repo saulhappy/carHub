@@ -17,7 +17,7 @@ class Photo < ApplicationRecord
                                                      original: "-quality 85 -strip" }
 
 
-    validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 
 

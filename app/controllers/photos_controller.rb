@@ -8,12 +8,20 @@
 
  #New action for creating a new photo
  def new
+  puts "========================"
+  puts params.inspect
   @photo = Photo.new
+  @car_id = params[:id]
+
  end
 
  #Create action ensures that submitted photo gets created if it meets the requirements
  def create
-  @photo = Photo.new(photo_params)
+  puts '######################'.inspect
+  puts params
+
+
+  @photo = Photo.new(photo_params)   #@user_car = UserCar.new(user_id: session[:user_id], car_id: params[:id])
   if @photo.save
    flash[:notice] = "Successfully added new photo!"
    redirect_to root_path
@@ -37,7 +45,7 @@ end
 
  #Permitted parameters when creating a photo. This is used for security reasons.
  def photo_params
-  params.require(:photo).permit(:title, :image)
+  params.require(:photo).permit(:car_id, :image)
  end
 
 end
