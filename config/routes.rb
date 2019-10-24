@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "landing#index"
+
   resources :maint_records
   resources :user_cars
   resources :families
@@ -12,9 +14,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy", as: "logout"
 
-
-
-  root to: "photos#index"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     get '/car/:id/photos', to: 'photos#new', as: 'upload_photo'
