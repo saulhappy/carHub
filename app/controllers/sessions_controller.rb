@@ -1,20 +1,20 @@
 class SessionsController < ApplicationController
     def new
     end
-  
+
     def create
-      user = User.find_by_name(params[:name])
+      user = User.find_by_name(params[:username])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to root_url, notice: "Logged in!"
+        redirect_to user_path(current_user.id)
       else
-        flash.now[:alert] = "name or password is invalid"
+        flash.now[:alert] = "Your username or passworld is invalid. Please try again."
         render :new
       end
     end
 
     def destroy
-      
+
       session[:user_id] = nil
       redirect_to root_url, notice: "Logged out!"
     end

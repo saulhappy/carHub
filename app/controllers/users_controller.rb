@@ -8,7 +8,11 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])
+        if User.find(session[:user_id]) == User.find(params[:id])
+          @user = User.find(params[:id])
+        else
+          redirect_to root_path
+        end
     end
 
     def edit
@@ -46,7 +50,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to users_url, notice: 'User was successfully deleted.' }
+        format.html { redirect_to users_url, notice: 'User was successfully deleted.'}
         format.json { head :no_content }
       end
     end
