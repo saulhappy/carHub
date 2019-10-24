@@ -1,5 +1,5 @@
 <h1> Add a New Car!</h1>
-<br>
+<br> <%= session[:user_id]%>
 <%= form_for @car do |f| %>
 <br>
     <label>Upload of photo of your car:</label><br>
@@ -32,9 +32,4 @@
     <%= f.submit %>
 
 <br>
-
-<%= hidden_field(:cart, session[:user_id])%>
-<%= session[:user_id]%>
-
-
 <% end %>

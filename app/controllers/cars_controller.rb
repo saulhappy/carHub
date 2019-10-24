@@ -1,25 +1,33 @@
 class CarsController < ApplicationController
-    def index 
-        @cars = Car.all 
-    end 
-    
-    def new 
+    def index
+        @cars = Car.all
+    end
+
+    def new
         @car = Car.new
     end
 
     def show
         @car = Car.find(params[:id])
-    end 
+    end
 
     def create
         @car = Car.new(car_params)
         if @car.valid?
           @car.save
-          redirect_to car_path(@car)
+          UserCar.create(user_id: session[:user_id], car: @car)
+          redirect_to upload_photo_path(@car.id)
+
+
+          # redirect_to join_table_path(@car.id) #:controller => 'UserCarsController', :action => 'create'    #redirect_to new_user_car_path([:id => @car.id])
         else
+
           render :new
         end
-    end 
+    end
+
+
+
 
     def update
         @car = Car.find(params[:id])
