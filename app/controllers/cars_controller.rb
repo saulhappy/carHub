@@ -9,6 +9,7 @@ class CarsController < ApplicationController
 
     def show
         @car = Car.find(params[:id])
+        @photos = Photo.all.select {|photo| photo.car_id == @car.id}
     end
 
     def create

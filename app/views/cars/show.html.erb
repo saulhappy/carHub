@@ -2,11 +2,17 @@
 <h1><%= @car.name %>'s Page</h1>
 <h5><%= "#{@car.year} #{@car.make} #{@car.model}" %></h5>
 </div>
-  
-
-Picture of car will go here
-
-<p><%= if @car.car_img_link then image_tag(@car.car_img_link) end %></p>
 
 
-Link to the Maintenance Record's show page will go here
+
+  <% @photos.each do |photo| %>
+    <div class="media-left">
+      <!-- Renders image -->
+      <%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
+      <!-- Button to delete image -->
+      <%= link_to 'Remove', photo_path(photo), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+    </div>
+    <div class="media-body">
+
+    </div>
+  <% end %>

@@ -7,12 +7,17 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+
     def show
-        if User.find(session[:user_id]) == User.find(params[:id])
+
+      if User.find(session[:user_id]) == User.find(params[:id])
           @user = User.find(params[:id])
-        else
+
+      else
           redirect_to root_path
-        end
+      end
+
+
     end
 
     def edit
@@ -21,7 +26,7 @@ class UsersController < ApplicationController
 
     def create
       @user = User.new(user_params)
-  
+
       respond_to do |format|
         if @user.save
           session[:user_id] = @user.id
@@ -33,7 +38,7 @@ class UsersController < ApplicationController
         end
       end
     end
-  
+
     def update
       respond_to do |format|
         if @user.update(user_params)
@@ -45,7 +50,7 @@ class UsersController < ApplicationController
         end
       end
     end
-  
+
     def destroy
       @user = User.find(params[:id])
       @user.destroy
@@ -54,13 +59,13 @@ class UsersController < ApplicationController
         format.json { head :no_content }
       end
     end
-  
+
     private
-    
+
       def set_user
         @user = User.find(params[:id])
       end
-  
+
       def user_params
         params.require(:user).permit(:name, :password, :password_confirmation)
       end
