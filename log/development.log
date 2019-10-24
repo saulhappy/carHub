@@ -24599,3 +24599,44 @@ Processing by PhotosController#index as HTML
 Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.4ms | Allocations: 13066)
 
 
+Started GET "/" for ::1 at 2019-10-24 14:18:31 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  Rendered photos/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 232)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 180.5ms | Allocations: 5121)
+Completed 200 OK in 261ms (Views: 240.4ms | ActiveRecord: 2.3ms | Allocations: 20924)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-24 14:18:35 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2547)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 632)
+Completed 200 OK in 79ms (Views: 29.0ms | ActiveRecord: 2.3ms | Allocations: 25414)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-24 14:18:46 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2192)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 3.4ms | Allocations: 628)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.3ms | Allocations: 15203)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-24 14:24:31 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2460)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 6.3ms | Allocations: 905)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.3ms | Allocations: 16902)
+
+
