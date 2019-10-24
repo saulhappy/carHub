@@ -24640,3 +24640,143 @@ Processing by CarsController#new as HTML
 Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.3ms | Allocations: 16902)
 
 
+Started GET "/users/10" for ::1 at 2019-10-24 14:29:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 182)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 7.3ms | Allocations: 851)
+Completed 200 OK in 83ms (Views: 55.4ms | ActiveRecord: 1.6ms | Allocations: 20589)
+
+
+Started GET "/cars/new" for ::1 at 2019-10-24 14:29:18 -0500
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2524)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 634)
+Completed 200 OK in 138ms (Views: 100.5ms | ActiveRecord: 1.8ms | Allocations: 25359)
+
+
+Started POST "/cars" for ::1 at 2019-10-24 14:29:30 -0500
+Processing by CarsController#create as HTML
+  Parameters: {"authenticity_token"=>"XnOfL1HCzQgoxvxZNx8c4iQb2x99U4QWe+sKYd3XGJCvR3zW7c3a3cF0IYWrJSxd/UWlDJ57meCXwhn6fR+YMA==", "car"=>{"name"=>"Luke", "make"=>"", "model"=>"", "mileage"=>"", "color"=>"", "description"=>""}, "date"=>{"year"=>"2019"}, "commit"=>"Create Car"}
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2212)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 626)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 0.2ms | Allocations: 15915)
+
+
+Started POST "/cars" for ::1 at 2019-10-24 14:29:53 -0500
+Processing by CarsController#create as HTML
+  Parameters: {"authenticity_token"=>"8uLtQ9qQQEaLnaLceQ3+vXr6WLfrUVnWbZDQTzgYEhy0wimVPLcy+TW0qX/STtDKFn7xolav9wpmL2zwghr8fw==", "car"=>{"name"=>"Luke", "make"=>"Mercedes", "model"=>"GLS AMG", "mileage"=>"45", "color"=>"pink", "description"=>"dqwerqwe"}, "date"=>{"year"=>"2019"}, "commit"=>"Create Car"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cars_controller.rb:17:in `create'
+  [1m[36mCar Create (1.8ms)[0m  [1m[32mINSERT INTO "cars" ("make", "model", "mileage", "color", "description", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["make", "Mercedes"], ["model", "GLS AMG"], ["mileage", 45], ["color", "pink"], ["description", "dqwerqwe"], ["created_at", "2019-10-24 19:29:53.434892"], ["updated_at", "2019-10-24 19:29:53.434892"], ["name", "Luke"]]
+  ↳ app/controllers/cars_controller.rb:17:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cars_controller.rb:17:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cars_controller.rb:18:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:18:in `create'
+  [1m[36mUserCar Create (1.2ms)[0m  [1m[32mINSERT INTO "user_cars" ("user_id", "car_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 10], ["car_id", 8], ["created_at", "2019-10-24 19:29:53.480732"], ["updated_at", "2019-10-24 19:29:53.480732"]]
+  ↳ app/controllers/cars_controller.rb:18:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cars_controller.rb:18:in `create'
+Redirected to http://localhost:3000/car/8/photos
+Completed 302 Found in 55ms (ActiveRecord: 7.1ms | Allocations: 12942)
+
+
+Started GET "/car/8/photos" for ::1 at 2019-10-24 14:29:53 -0500
+Processing by PhotosController#new as HTML
+  Parameters: {"id"=>"8"}
+  Rendering photos/new.html.erb within layouts/application
+  Rendered photos/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 839)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 632)
+Completed 200 OK in 42ms (Views: 25.2ms | ActiveRecord: 1.1ms | Allocations: 20514)
+
+
+Started POST "/photos" for ::1 at 2019-10-24 14:29:59 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"6nG8TYpKErWnlvsO9bfpaB3VJht28UirYLBdoz69+16sUXibbG1gChm/8K1e9McfcVGPDssP5ndrD+EchL8VPQ==", "photo"=>{"car_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe2f9370148 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-4666-vn51g7.jpg>, @original_filename="download.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"download.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1qb5c6y.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1dr4du1.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1dr4du1.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/eea91359ee76ae2717ab7b662689a53c20191024-4666-1d76967.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/cef5dd16e49daaa8b045f0b1999ebecf20191024-4666-2q3ql5.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/cef5dd16e49daaa8b045f0b1999ebecf20191024-4666-2q3ql5.jpg[0]' -auto-orient -resize "x64" -crop "64x64+16+0" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8a32daa03c1c4b9160a4b387bd87d97820191024-4666-550weh.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1lsqdeb.jpg'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-114pi8w.jpg'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-rievvu.jpg'
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("image_file_name", "image_content_type", "image_file_size", "image_updated_at", "car_id", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["image_file_name", "download.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 17324], ["image_updated_at", "2019-10-24 19:29:59.990573"], ["car_id", 8], ["created_at", "2019-10-24 19:30:00.224284"]]
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 3.1ms | Allocations: 15124)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+  
+app/controllers/photos_controller.rb:27:in `create'
+Started POST "/photos" for ::1 at 2019-10-24 14:31:03 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"6nG8TYpKErWnlvsO9bfpaB3VJht28UirYLBdoz69+16sUXibbG1gChm/8K1e9McfcVGPDssP5ndrD+EchL8VPQ==", "photo"=>{"car_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe2f7e9ef30 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-4666-iimnib.jpg>, @original_filename="download.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"download.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1513cbg.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1qu97vu.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1qu97vu.jpg[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/00b6e1aca63a2c7e68995248b0f1f40a20191024-4666-1c8tjca.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/ef85e4d190504a2c68e3b454dbdc346920191024-4666-1ugudox.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/ef85e4d190504a2c68e3b454dbdc346920191024-4666-1ugudox.jpg[0]' -auto-orient -resize "x64" -crop "64x64+16+0" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/450932dc6cd3f7392df41ded2ba772e820191024-4666-1wcanzj.jpg'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-1ombi0.jpg'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-cimb41.jpg'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/fd456406745d816a45cae554c788e75420191024-4666-19wfgr8.jpg'
+  [1m[36mPhoto Create (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("image_file_name", "image_content_type", "image_file_size", "image_updated_at", "car_id", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["image_file_name", "download.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 17324], ["image_updated_at", "2019-10-24 19:31:03.299603"], ["car_id", 8], ["created_at", "2019-10-24 19:31:03.555739"]]
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/photos_controller.rb:25:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 309ms (ActiveRecord: 7.5ms | Allocations: 42609)
+
+
+Started GET "/users/10" for ::1 at 2019-10-24 14:31:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 59)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 576)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.4ms | Allocations: 21794)
+
+

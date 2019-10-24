@@ -24,7 +24,7 @@
   @photo = Photo.new(photo_params)   #@user_car = UserCar.new(user_id: session[:user_id], car_id: params[:id])
   if @photo.save
    flash[:notice] = "Successfully added new photo!"
-   redirect_to root_path
+   redirect_to user_path(current_user.id)
   else
    flash[:alert] = "Error adding new photo!"
    render :new
