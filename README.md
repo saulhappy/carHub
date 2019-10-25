@@ -37,11 +37,13 @@ This application was written in Ruby using Rails. The application also required 
 
 This is what the using the website looks like:
 
-   ![](/images/game_start.gif)
-   
-   ![](/images/login_play.gif)
-   
-   ![](/images/endNscores.gif)
+   ![](/images/unnamed.gif)
+   ---
+   ![](/images/unnamed-1.gif)
+   ---
+   ![](/images/unnamed-3.gif)
+   ---
+   ![](/images/unnamed-2.gif)
 
 
 ## Credits
