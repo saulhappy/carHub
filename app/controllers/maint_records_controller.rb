@@ -14,8 +14,11 @@ class MaintRecordsController < ApplicationController
   def create
    @maint_record = MaintRecord.new(record_params)
    if @maint_record.save
-    redirect_to :controller => :cars, :action => :show, id: @maint_record.car.id
+
+
+    redirect_to car_path(@maint_record.car_id) #user show page
    else
+
     render :new
    end
   end
@@ -23,7 +26,7 @@ class MaintRecordsController < ApplicationController
   def destroy
  @maint_record = MaintRecord.find(params[:id])
    if @maint_record.destroy
-     redirect_to root_path
+     redirect_to car_path(@maint_record.car_id)
    end
  end
 
@@ -31,7 +34,7 @@ class MaintRecordsController < ApplicationController
 
   #Permitted parameters when creating a photo. This is used for security reasons.
   def record_params
-   params.require(:maint_record).permit(:image, :car_id)
+   params.require(:maint_record).permit(:car_id, :image)
   end
 
 end

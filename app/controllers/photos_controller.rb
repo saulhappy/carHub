@@ -8,8 +8,7 @@
 
  #New action for creating a new photo
  def new
-  puts "========================"
-  puts params.inspect
+  
   @photo = Photo.new
   @car_id = params[:id]
 
@@ -22,7 +21,6 @@
   if @photo.save
    redirect_to user_path(current_user.id)
   else
-   flash[:alert] = "Error adding new photo!"
    render :new
   end
  end
@@ -30,10 +28,7 @@
  def destroy
 @photo = Photo.find(params[:id])
   if @photo.destroy
-    flash[:notice] = "Successfully deleted photo!"
     redirect_to user_path(current_user.id)
-  else
-    flash[:alert] = "Error deleting photo!"
   end
 end
 
