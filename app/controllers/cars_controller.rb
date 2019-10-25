@@ -10,25 +10,21 @@ class CarsController < ApplicationController
     def show
         @car = Car.find(params[:id])
         @photos = Photo.all.select {|photo| photo.car_id == @car.id}
+        @maint_records = MaintRecord.all.select {|record| record.car_id == @car.id}
     end
+
+
 
     def create
         @car = Car.new(car_params)
         if @car.valid?
           @car.save
-          UserCar.create(user_id: session[:user_id], car: @car)
+          UserCar.create(user_id: session[:user_id], car: @car) #creates user_cars row
           redirect_to upload_photo_path(@car.id)
-
-
-          # redirect_to join_table_path(@car.id) #:controller => 'UserCarsController', :action => 'create'    #redirect_to new_user_car_path([:id => @car.id])
         else
-
           render :new
         end
     end
-
-
-
 
     def update
         @car = Car.find(params[:id])

@@ -10,7 +10,7 @@ class UserCarsController < ApplicationController
 
     @user_car = UserCar.new(user_id: session[:user_id], car_id: params[:id])
     @user_car.save
-    redirect_to upload_photo_path(params[:id])
+    redirect_to upload_photo_path(params[:id]) #new photo action
   end
 
   private
