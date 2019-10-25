@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to user_path(current_user.id)
       else
-        flash.now[:alert] = "Your username or passworld is invalid. Please try again."
         render :new
       end
     end
