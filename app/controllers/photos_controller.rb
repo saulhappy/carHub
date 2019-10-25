@@ -8,8 +8,7 @@
 
  #New action for creating a new photo
  def new
-  puts "========================"
-  puts params.inspect
+  
   @photo = Photo.new
   @car_id = params[:id]
 

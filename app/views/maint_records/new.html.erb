@@ -17,6 +17,11 @@
   <% end %>
 
 
+
+
+  <%= f.hidden_field(:car_id, :value => @car_id) %>
+
+
   <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, class: 'form-control' %>
