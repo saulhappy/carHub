@@ -26766,3 +26766,1376 @@ Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms | Allocations: 129
 
 
 >>>>>>> e9c874cd117e073940d717e9f1f6a11de28fc12a
+Started GET "/cars/11" for ::1 at 2019-10-24 19:24:36 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 991)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 23.7ms | Allocations: 5973)
+Completed 200 OK in 3013ms (Views: 2883.8ms | ActiveRecord: 3.8ms | Allocations: 1407601)
+
+
+Started GET "/maint_record_new/11" for ::1 at 2019-10-24 19:24:42 -0500
+  
+ActionController::RoutingError (uninitialized constant MaintRecordController
+Did you mean?  MaintRecordsController):
+  
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.0) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:25:14 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 2354)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 643)
+Completed 200 OK in 73ms (Views: 51.3ms | ActiveRecord: 1.2ms | Allocations: 22807)
+
+
+Started GET "/maint_records/new/11" for ::1 at 2019-10-24 19:26:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/maint_records/new/11"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:26:06 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 413)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 4.9ms | Allocations: 634)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.2ms | Allocations: 13430)
+
+
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:29:51 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 735)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 4.9ms | Allocations: 910)
+Completed 200 OK in 60ms (Views: 58.3ms | ActiveRecord: 0.2ms | Allocations: 15189)
+
+
+Started GET "/maint_records/new/11" for ::1 at 2019-10-24 19:29:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/maint_records/new/11"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/maint_record_new/11" for ::1 at 2019-10-24 19:30:05 -0500
+  
+ActionController::RoutingError (uninitialized constant MaintRecordController
+Did you mean?  MaintRecordsController):
+  
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.0) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/11" for ::1 at 2019-10-24 19:30:09 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 711)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 634)
+Completed 200 OK in 120ms (Views: 114.3ms | ActiveRecord: 0.7ms | Allocations: 15382)
+
+
+Started GET "/maint_record_new/11" for ::1 at 2019-10-24 19:30:36 -0500
+  
+ActionController::RoutingError (uninitialized constant MaintRecordController
+Did you mean?  MaintRecordsController):
+  
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.0) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/11" for ::1 at 2019-10-24 19:31:01 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 703)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 5.7ms | Allocations: 912)
+Completed 200 OK in 118ms (Views: 109.9ms | ActiveRecord: 0.9ms | Allocations: 16214)
+
+
+Started GET "/maint_record_new/11" for ::1 at 2019-10-24 19:31:04 -0500
+  
+ActionController::RoutingError (uninitialized constant MaintRecordController
+Did you mean?  MaintRecordsController):
+  
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.0) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/11" for ::1 at 2019-10-24 19:31:13 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 414)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 5.2ms | Allocations: 628)
+Completed 200 OK in 46ms (Views: 39.1ms | ActiveRecord: 0.8ms | Allocations: 14482)
+
+
+Started GET "/maint_record_new/11" for ::1 at 2019-10-24 19:32:10 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/maint_record_new/11"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/11" for ::1 at 2019-10-24 19:32:14 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 425.9ms | Allocations: 83761)
+Completed 500 Internal Server Error in 496ms (ActiveRecord: 3.1ms | Allocations: 102250)
+
+
+  
+ActionView::Template::Error (undefined method `maint_record_new_path' for #<#<Class:0x00007fb41a5b8468>:0x00007fb41b9a2118>
+Did you mean?  maint_records_new_path
+               maint_record_path
+               maint_records_path
+               maint_records_new_url):
+    13:   <h5><%= @car.name%>'s Description</h5>
+    14:    <p><%= @car.description %></p>
+    15:    <br>
+    16:     <%= link_to "Add a maintenance record for #{@car.name}", maint_record_new_path(:id => @car.id) %>
+    17:     <br><br>
+    18:    <%= link_to "Edit #{@car.name}", cars_edit_path(:id => @car.id) %>
+    19:     <br><br><br>
+  
+app/views/cars/show.html.erb:16
+app/views/cars/show.html.erb:8:in `each'
+app/views/cars/show.html.erb:8
+Started GET "/maint_record_new/11" for ::1 at 2019-10-24 19:33:05 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/maint_record_new/11"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/11" for ::1 at 2019-10-24 19:33:13 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 439)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 16.3ms | Allocations: 5413)
+Completed 200 OK in 80ms (Views: 36.2ms | ActiveRecord: 3.4ms | Allocations: 36236)
+
+
+Started GET "/users/1" for ::1 at 2019-10-24 19:33:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms | Allocations: 1327)
+
+
+Started GET "/" for ::1 at 2019-10-24 19:33:43 -0500
+Processing by LandingController#index as HTML
+  Rendering landing/index.html.erb within layouts/application
+  Rendered landing/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 89)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 659)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.1ms | Allocations: 13646)
+
+
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:39:25 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1597)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.9ms | Allocations: 9504)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    24:   </div>
+    25: 
+    26:     <label> Which car is this maintenance record for? </label><br>
+    27:  <%= f.collection_select :maint_record_id, MaintRecord.all, :id%><br>
+    28: 
+    29:   <div class="form-group">
+    30:         <%= f.submit 'Upload Photo', class: 'btn btn-default' %>
+  
+app/views/maint_records/new.html.erb:27
+app/views/maint_records/new.html.erb:3
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:40:25 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 32.5ms | Allocations: 5678)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 6888)
+
+
+  
+ActionView::Template::Error (undefined method `maint_record_id' for #<MaintRecord:0x00007fb414f341c8>):
+    24:   </div>
+    25: 
+    26:     <label> Which car is this maintenance record for? </label><br>
+    27:  <%= f.collection_select :maint_record_id, MaintRecord.all, :id, :car_id%><br>
+    28: 
+    29:   <div class="form-group">
+    30:         <%= f.submit 'Upload Photo', class: 'btn btn-default' %>
+  
+app/views/maint_records/new.html.erb:27
+app/views/maint_records/new.html.erb:3
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:47:53 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 19.1ms | Allocations: 3112)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 4322)
+
+
+  
+ActionView::Template::Error (undefined method `maint_record_id' for #<MaintRecord:0x00007fb4157d3158>):
+    24:   </div>
+    25: 
+    26:     <label> Which car is this maintenance record for? </label><br>
+    27:  <%= f.collection_select :maint_record_id, MaintRecord.all, :car_id, :car_id%><br>
+    28: 
+    29:   <div class="form-group">
+    30:         <%= f.submit 'Upload Photo', class: 'btn btn-default' %>
+  
+app/views/maint_records/new.html.erb:27
+app/views/maint_records/new.html.erb:3
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:54:16 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 739)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 6.7ms | Allocations: 921)
+Completed 200 OK in 105ms (Views: 95.0ms | ActiveRecord: 0.4ms | Allocations: 15196)
+
+
+Started GET "/maint_records/new" for ::1 at 2019-10-24 19:54:31 -0500
+Processing by MaintRecordsController#new as HTML
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 735)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 5.1ms | Allocations: 905)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.3ms | Allocations: 15170)
+
+
+Started GET "/users/10" for ::1 at 2019-10-24 19:54:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "user_cars" ON "cars"."id" = "user_cars"."car_id" WHERE "user_cars"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 7]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 8]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 9]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 10]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 11]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 12]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered users/show.html.erb within layouts/application (Duration: 82.0ms | Allocations: 15027)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 576)
+Completed 200 OK in 112ms (Views: 100.4ms | ActiveRecord: 2.2ms | Allocations: 29873)
+
+
+Started GET "/cars/11" for ::1 at 2019-10-24 19:54:42 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 706)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 3.1ms | Allocations: 632)
+Completed 200 OK in 44ms (Views: 36.8ms | ActiveRecord: 1.0ms | Allocations: 15404)
+
+
+Started GET "/maint_record_new?id=11" for ::1 at 2019-10-24 19:54:47 -0500
+  
+ActionController::RoutingError (uninitialized constant MaintRecordController
+Did you mean?  MaintRecordsController):
+  
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.0) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/11" for ::1 at 2019-10-24 19:54:56 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 414)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 628)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 0.7ms | Allocations: 14487)
+
+
+Started GET "/maint_record_new?id=11" for ::1 at 2019-10-24 19:56:40 -0500
+  
+ActionController::RoutingError (uninitialized constant MaintRecordController
+Did you mean?  MaintRecordsController):
+  
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.0) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/11" for ::1 at 2019-10-24 19:56:43 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 414)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.7ms | Allocations: 628)
+Completed 200 OK in 45ms (Views: 39.1ms | ActiveRecord: 1.2ms | Allocations: 14479)
+
+
+Started GET "/users/10" for ::1 at 2019-10-24 20:00:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "user_cars" ON "cars"."id" = "user_cars"."car_id" WHERE "user_cars"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 7]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 8]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 9]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 10]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 11]]
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."car_id" = ?[0m  [["car_id", 12]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered users/show.html.erb within layouts/application (Duration: 43.9ms | Allocations: 26208)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 16.0ms | Allocations: 577)
+Completed 200 OK in 102ms (Views: 83.1ms | ActiveRecord: 3.6ms | Allocations: 45804)
+
+
+Started GET "/cars/11" for ::1 at 2019-10-24 20:01:41 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1607)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 3.6ms | Allocations: 905)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 1.0ms | Allocations: 17225)
+
+
+Started GET "/maint_records/new?id=11" for ::1 at 2019-10-24 20:01:48 -0500
+Processing by MaintRecordsController#new as HTML
+  Parameters: {"id"=>"11"}
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 820)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 632)
+Completed 200 OK in 70ms (Views: 36.9ms | ActiveRecord: 2.1ms | Allocations: 21106)
+
+
+Started GET "/cars/11" for ::1 at 2019-10-24 20:03:13 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 748)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 3.1ms | Allocations: 905)
+Completed 200 OK in 49ms (Views: 42.4ms | ActiveRecord: 0.9ms | Allocations: 16244)
+
+
+Started GET "/maint_records/new?id=11" for ::1 at 2019-10-24 20:03:17 -0500
+Processing by MaintRecordsController#new as HTML
+  Parameters: {"id"=>"11"}
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 734)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 3.1ms | Allocations: 632)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.2ms | Allocations: 14326)
+
+
+Started GET "/maint_records/new?id=11" for ::1 at 2019-10-24 20:06:33 -0500
+Processing by MaintRecordsController#new as HTML
+  Parameters: {"id"=>"11"}
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 46.3ms | Allocations: 3304)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 5.9ms | Allocations: 905)
+Completed 200 OK in 161ms (Views: 155.4ms | ActiveRecord: 0.4ms | Allocations: 17666)
+
+
+Started POST "/maint_records" for ::1 at 2019-10-24 20:06:41 -0500
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"JrAD1RPGB0EmTwOoX84WlLUEXcQh6MJ7LJnqzDE9BWqLIC9PZJDegmGOYsLrvSoUh/oD4mS4L3pr1wdJ6VAjuQ==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb41ace83c8 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-bo22tv.png>, @original_filename="Auto-repair-receipt.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"Auto-repair-receipt.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload Photo"}
+[31mUnpermitted parameter: :car_id[0m
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-badav5.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-q8bem9.png[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-q8bem9.png[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/9556ade166b8469620afbeb97dd59f7320191024-7936-1ish1sl.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/cb94390d02dd24ffd273438845b898ec20191024-7936-9ixwam.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/cb94390d02dd24ffd273438845b898ec20191024-7936-9ixwam.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+9" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2b99313f052feaf029d69be55f859c6220191024-7936-2eus6u.jpg'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-xf4awf.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-tr5t6x.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-12tke2b.png'
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 596)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 3.0ms | Allocations: 626)
+Completed 200 OK in 469ms (Views: 26.5ms | ActiveRecord: 0.3ms | Allocations: 19387)
+
+
+Started GET "/cars/11" for ::1 at 2019-10-24 20:09:25 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 123.9ms | Allocations: 766)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 634)
+Completed 200 OK in 171ms (Views: 156.8ms | ActiveRecord: 1.0ms | Allocations: 15418)
+
+
+Started GET "/maint_records/new?id=11" for ::1 at 2019-10-24 20:10:00 -0500
+Processing by MaintRecordsController#new as HTML
+  Parameters: {"id"=>"11"}
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 466)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 632)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.2ms | Allocations: 13490)
+
+
+Started POST "/maint_records" for ::1 at 2019-10-24 20:11:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"dJIpCxi/3rWZoZz1lDg6c546b1+iZKtYlxaRMNgYskDZAgWRb+kHdt5g/Z8gSwbzrMQxeec0RlnQWHy1AHWUkw==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb41a3001f8 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-17xmbai.png>, @original_filename="Auto-repair-receipt.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"Auto-repair-receipt.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-4vuxlt.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1pf9xar.png[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1pf9xar.png[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/edec43ea4651fe3ea764eec40419e3bb20191024-7936-wwf6ug.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/9657a1eb18b1da161e6b0319acccb69d20191024-7936-1cddnlo.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/9657a1eb18b1da161e6b0319acccb69d20191024-7936-1cddnlo.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+9" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/f73bd566dc7b31011ef560cc04e333a120191024-7936-nfj4dw.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-14ejguu.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1u7mdol.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-ebod2t.png'
+  [1m[36mMaintRecord Create (0.6ms)[0m  [1m[32mINSERT INTO "maint_records" ("car_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 11], ["created_at", "2019-10-25 01:11:52.986123"], ["updated_at", "2019-10-25 01:11:52.986123"], ["image_file_name", "Auto-repair-receipt.png"], ["image_content_type", "image/png"], ["image_file_size", 34312], ["image_updated_at", "2019-10-25 01:11:52.639081"]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Redirected to http://localhost:3000/maint_records
+Completed 302 Found in 377ms (ActiveRecord: 3.5ms | Allocations: 30925)
+
+
+Started GET "/maint_records" for ::1 at 2019-10-24 20:11:53 -0500
+Processing by MaintRecordsController#index as HTML
+  Rendering maint_records/index.html.erb within layouts/application
+  [1m[36mMaintRecord Load (1.3ms)[0m  [1m[34mSELECT "maint_records".* FROM "maint_records" ORDER BY created_at[0m
+  ↳ app/views/maint_records/index.html.erb:4
+  Rendered maint_records/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1260)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 23.4ms | Allocations: 5690)
+Completed 200 OK in 74ms (Views: 69.2ms | ActiveRecord: 2.3ms | Allocations: 20500)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2019-10-24 20:11:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/images/original/missing.png" for ::1 at 2019-10-24 20:11:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/images/original/missing.png" for ::1 at 2019-10-24 20:12:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/images/original/missing.png" for ::1 at 2019-10-24 20:12:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/maint_records" for ::1 at 2019-10-24 20:16:06 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"Bl2GUztuNjU+7NnkAUHRf6U4K4grQvB3pp7Qi7dDX9tAfUKF3UlEioDF0keqAv8IybyCnZa8XqutIWw0DUGxuA==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb41a960458 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-1ddoz2s.gif>, @original_filename="AWreport4.gif", @content_type="image/gif", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"AWreport4.gif\"\r\nContent-Type: image/gif\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-yrlif2.gif'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-1t47xjl.gif[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-1t47xjl.gif[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/9f7ab22c44df0d1db61eb80730613b1c20191024-7936-kd1ach.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/b00d0ae17989e53c9343b3ea824fb85420191024-7936-15we2ij.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/b00d0ae17989e53c9343b3ea824fb85420191024-7936-15we2ij.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+7" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/a69eb792789c049b34dd95d299ad76b720191024-7936-19bppvb.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-14bpeef.gif'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-18ev58w.gif'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-1tw9ewj.gif'
+  [1m[36mMaintRecord Create (0.5ms)[0m  [1m[32mINSERT INTO "maint_records" ("car_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 11], ["created_at", "2019-10-25 01:16:07.041047"], ["updated_at", "2019-10-25 01:16:07.041047"], ["image_file_name", "AWreport4.gif"], ["image_content_type", "image/gif"], ["image_file_size", 33765], ["image_updated_at", "2019-10-25 01:16:06.679623"]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Redirected to http://localhost:3000/cars_show
+Completed 302 Found in 405ms (ActiveRecord: 3.6ms | Allocations: 46753)
+
+
+Started GET "/cars_show" for ::1 at 2019-10-24 20:16:07 -0500
+Processing by CarsController#show as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 639)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Car without an ID):
+  
+app/controllers/cars_controller.rb:11:in `show'
+Started GET "/cars/1" for ::1 at 2019-10-24 20:18:14 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 304)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 15.2ms | Allocations: 5422)
+Completed 200 OK in 60ms (Views: 33.6ms | ActiveRecord: 2.0ms | Allocations: 28203)
+
+
+Started GET "/cars/11" for ::1 at 2019-10-24 20:18:15 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1255)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 628)
+Completed 200 OK in 34ms (Views: 28.2ms | ActiveRecord: 0.7ms | Allocations: 15324)
+
+
+Started GET "/maint_records/new?id=11" for ::1 at 2019-10-24 20:19:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#new as HTML
+  Parameters: {"id"=>"11"}
+  Rendering maint_records/new.html.erb within layouts/application
+  Rendered maint_records/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 880)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 13.3ms | Allocations: 5432)
+Completed 200 OK in 96ms (Views: 82.9ms | ActiveRecord: 1.4ms | Allocations: 33225)
+
+
+Started POST "/maint_records" for ::1 at 2019-10-24 20:19:19 -0500
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"K1Pyo+0YAG9MBsvGwudtY6NYe3HnSWanBEqtdQ1T/m6Gw945mk7ZrAvHqqx2lFHjkaYlV6IZi6ZDBEDw1T7YvQ==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb415789da0 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-11lvend.png>, @original_filename="Auto-repair-receipt.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"Auto-repair-receipt.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1hex8cj.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1dpf1sd.png[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1dpf1sd.png[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/9a017f5cb21acf1a356ead022458bed420191024-7936-3styou.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/0e3f18414781d2c207938c768add855b20191024-7936-n8oxrb.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/0e3f18414781d2c207938c768add855b20191024-7936-n8oxrb.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+9" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/acb010f9f947ccfde01775aeed14bfb220191024-7936-17kj3kn.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1ypwkxf.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-jwhwhf.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-jhcrg5.png'
+  [1m[36mMaintRecord Create (0.5ms)[0m  [1m[32mINSERT INTO "maint_records" ("car_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 11], ["created_at", "2019-10-25 01:19:20.220401"], ["updated_at", "2019-10-25 01:19:20.220401"], ["image_file_name", "Auto-repair-receipt.png"], ["image_content_type", "image/png"], ["image_file_size", 34312], ["image_updated_at", "2019-10-25 01:19:19.983277"]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 3.3ms | Allocations: 25274)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"cars"}, missing required keys: [:id]):
+  
+app/controllers/maint_records_controller.rb:17:in `create'
+Started POST "/maint_records" for ::1 at 2019-10-24 20:20:57 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"3Akc4yhXCbjakjlMzD4y2WM3FtdSIEvL20AHAGLBWECaKdg1znB7B2S7Mu9nfRyuD7O/wu/e5RfQ/7u/2MO2Iw==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb41a4d3548 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-1lh5rd.png>, @original_filename="Auto-repair-receipt.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"Auto-repair-receipt.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1055lua.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-6xy13j.png[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-6xy13j.png[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/d017628309639350e8bbe8d9090ae98920191024-7936-5yzwr7.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2a58aa982d9e803bda9bcaeb26388e1f20191024-7936-1p1wmys.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2a58aa982d9e803bda9bcaeb26388e1f20191024-7936-1p1wmys.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+9" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/d99156fbc39a83d74fdf4b1e6e26b97620191024-7936-39yawp.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1a3uu1a.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-zehc4.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1m3m5yd.png'
+  [1m[36mMaintRecord Create (1.8ms)[0m  [1m[32mINSERT INTO "maint_records" ("car_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 11], ["created_at", "2019-10-25 01:20:58.207887"], ["updated_at", "2019-10-25 01:20:58.207887"], ["image_file_name", "Auto-repair-receipt.png"], ["image_content_type", "image/png"], ["image_file_size", 34312], ["image_updated_at", "2019-10-25 01:20:57.900746"]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 4.8ms | Allocations: 47370)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/maint_records_controller.rb:17:in `create'
+Started POST "/maint_records" for ::1 at 2019-10-24 20:21:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"3Akc4yhXCbjakjlMzD4y2WM3FtdSIEvL20AHAGLBWECaKdg1znB7B2S7Mu9nfRyuD7O/wu/e5RfQ/7u/2MO2Iw==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb4157c9748 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-2cj474.png>, @original_filename="Auto-repair-receipt.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"Auto-repair-receipt.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-ink585.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-el5ely.png[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-el5ely.png[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/b860f95c9c9e28b12171b8c4e165463820191024-7936-1o6smg0.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/34f0e11c8566e30848ed019d79b5d75920191024-7936-16ekat9.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/34f0e11c8566e30848ed019d79b5d75920191024-7936-16ekat9.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+9" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/a35c95adc786a8e1025ef8abeb2f715220191024-7936-q5330l.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-39wpot.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-c4ueqz.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1o9xqu1.png'
+  [1m[36mMaintRecord Create (0.5ms)[0m  [1m[32mINSERT INTO "maint_records" ("car_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 11], ["created_at", "2019-10-25 01:21:52.871868"], ["updated_at", "2019-10-25 01:21:52.871868"], ["image_file_name", "Auto-repair-receipt.png"], ["image_content_type", "image/png"], ["image_file_size", 34312], ["image_updated_at", "2019-10-25 01:21:52.564627"]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 3.8ms | Allocations: 39859)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/maint_records_controller.rb:17:in `create'
+Started POST "/maint_records" for ::1 at 2019-10-24 20:23:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"3Akc4yhXCbjakjlMzD4y2WM3FtdSIEvL20AHAGLBWECaKdg1znB7B2S7Mu9nfRyuD7O/wu/e5RfQ/7u/2MO2Iw==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb41b972f08 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-1in4byi.png>, @original_filename="Auto-repair-receipt.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"Auto-repair-receipt.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-ii8zq0.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1czep6c.png[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1czep6c.png[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/519a41dfe7c3862b852efbadf654fe5320191024-7936-1oyg3h1.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/e4524946a21395a0c4528435d2f8da3420191024-7936-qtdky9.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/e4524946a21395a0c4528435d2f8da3420191024-7936-qtdky9.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+9" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2ea7483403e600ef393130fcaaab097020191024-7936-1d1xb1q.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1j9hsi5.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-1nff8ux.png'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/2d86e65ff04f25ca801f47fb2e4732ac20191024-7936-4cvfg.png'
+  [1m[36mMaintRecord Create (1.4ms)[0m  [1m[32mINSERT INTO "maint_records" ("car_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 11], ["created_at", "2019-10-25 01:23:10.762946"], ["updated_at", "2019-10-25 01:23:10.762946"], ["image_file_name", "Auto-repair-receipt.png"], ["image_content_type", "image/png"], ["image_file_size", 34312], ["image_updated_at", "2019-10-25 01:23:10.476115"]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Redirected to http://localhost:3000/cars/11
+Completed 302 Found in 326ms (ActiveRecord: 4.0ms | Allocations: 40086)
+
+
+Started GET "/cars/11" for ::1 at 2019-10-24 20:23:10 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 482)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 14.1ms | Allocations: 5395)
+Completed 200 OK in 129ms (Views: 42.7ms | ActiveRecord: 2.6ms | Allocations: 26598)
+
+
+Started POST "/maint_records" for ::1 at 2019-10-24 20:23:30 -0500
+Processing by MaintRecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"3Akc4yhXCbjakjlMzD4y2WM3FtdSIEvL20AHAGLBWECaKdg1znB7B2S7Mu9nfRyuD7O/wu/e5RfQ/7u/2MO2Iw==", "maint_record"=>{"car_id"=>"11", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb41a0c3e08 @tempfile=#<Tempfile:/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/RackMultipart20191024-7936-1gh99en.gif>, @original_filename="AWreport4.gif", @content_type="image/gif", @headers="Content-Disposition: form-data; name=\"maint_record[image]\"; filename=\"AWreport4.gif\"\r\nContent-Type: image/gif\r\n">}, "commit"=>"Upload Photo"}
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-qagrpi.gif'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-ebwd1y.gif[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-ebwd1y.gif[0]' -auto-orient -resize "500x500>" -quality 85 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/0c21a12a99437646929ebf1a65eb3ac620191024-7936-11m05gr.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/3d6cf7ee8cc96a3bd256c1523278416c20191024-7936-1j9sb8y.jpg[0]' 2>/dev/null
+Command :: convert '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/3d6cf7ee8cc96a3bd256c1523278416c20191024-7936-1j9sb8y.jpg[0]' -auto-orient -resize "64x" -crop "64x64+0+7" +repage -quality 75 -strip '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/42454ead69386e97b1195ddf32c60c1620191024-7936-lbf2zk.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-1j9n72m.gif'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-1ko56e4.gif'
+Command :: file -b --mime '/var/folders/3m/hzp6x2q138ngl3__b8jdpdpw0000gn/T/8c6f01b1527c979d00b5937d894b256d20191024-7936-cp5tr4.gif'
+  [1m[36mMaintRecord Create (0.5ms)[0m  [1m[32mINSERT INTO "maint_records" ("car_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["car_id", 11], ["created_at", "2019-10-25 01:23:31.073909"], ["updated_at", "2019-10-25 01:23:31.073909"], ["image_file_name", "AWreport4.gif"], ["image_content_type", "image/gif"], ["image_file_size", 33765], ["image_updated_at", "2019-10-25 01:23:30.814651"]]
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/maint_records_controller.rb:16:in `create'
+Redirected to http://localhost:3000/cars/11
+Completed 302 Found in 276ms (ActiveRecord: 2.1ms | Allocations: 13857)
+
+
+Started GET "/cars/11" for ::1 at 2019-10-24 20:23:31 -0500
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:11:in `show'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/controllers/cars_controller.rb:12:in `show'
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 453)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 628)
+Completed 200 OK in 31ms (Views: 25.9ms | ActiveRecord: 0.7ms | Allocations: 14522)
+
+

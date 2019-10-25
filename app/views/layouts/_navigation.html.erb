@@ -16,7 +16,7 @@
           <% if current_user %>
             <li> <a>Logged in as <b><%= current_user.name %></b></a></li>
             <li><%= link_to "Logout", logout_path %></li>
-            <li><%= link_to 'Home', user_path(current_user.id) %></li>
+            <li><%= link_to 'Garage', user_path(current_user.id) %></li>
             <li><%= link_to 'Add a car', new_car_path %></li>
             <% else %>
             <li><%= link_to 'Home', root_path %></li>

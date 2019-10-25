@@ -18,17 +18,10 @@ class CarsController < ApplicationController
           @car.save
           UserCar.create(user_id: session[:user_id], car: @car)
           redirect_to upload_photo_path(@car.id)
-
-
-          # redirect_to join_table_path(@car.id) #:controller => 'UserCarsController', :action => 'create'    #redirect_to new_user_car_path([:id => @car.id])
         else
-
           render :new
         end
     end
-
-
-
 
     def update
         @car = Car.find(params[:id])

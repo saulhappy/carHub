@@ -31,7 +31,7 @@
 @photo = Photo.find(params[:id])
   if @photo.destroy
     flash[:notice] = "Successfully deleted photo!"
-    redirect_to root_path
+    redirect_to user_path(current_user.id)
   else
     flash[:alert] = "Error deleting photo!"
   end
