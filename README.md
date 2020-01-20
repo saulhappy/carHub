@@ -5,6 +5,7 @@ Module Two Final Project: carHub
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Examples of Use](#examples-of-use)
+* [Demo](#demo)
 * [Credits](#credits)
 
 ---
@@ -44,6 +45,10 @@ This is what the using the website looks like:
    ![](/images/unnamed-3.gif)
    ---
    ![](/images/unnamed-2.gif)
+   
+ ## Demo
+Click the image below to be redirected to a demo video.
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/eDgmp5DT5Vg/0.jpg)](http://www.youtube.com/watch?v=eDgmp5DT5Vg)
 
 
 ## Credits
