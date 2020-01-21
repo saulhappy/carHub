@@ -57,7 +57,7 @@ Click the image below to be redirected to a demo video.
 The humble developers in training that built this are:
 
 
-**Saul Feliz** [LinkedIn](https://www.linkedin.com/in/saul-feliz-ba8bab1/) // [Github](https://github.com/saulhappy)
+**Saul Feliz** [LinkedIn](https://www.linkedin.com/in/saul-feliz-ba8bab1/) // [Github](https://github.com/saulhappy) // [Portfolio](https://saulfeliz.com/)
 
 &
 
